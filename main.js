@@ -46,7 +46,7 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
   const centered = new THREE.Group();
   watch.position.sub(center);
   centered.add(watch);
-  centered.scale.setScalar(3.5 / largest);
+  centered.scale.setScalar(1.9 / largest);
   watchPivot.add(centered);
   status.style.opacity = '0';
   setTimeout(() => status.remove(), 350);
