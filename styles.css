@@ -1,0 +1,24 @@
+:root{color-scheme:dark;--gold:#c6a56c;--bone:#e8e2d5;--muted:#8b8880}
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0}
+body{background:#070808;color:var(--bone);font-family:"DM Sans",sans-serif;overflow:hidden}
+.experience{position:relative;width:100%;height:100svh;min-height:520px;isolation:isolate;background:radial-gradient(ellipse at 57% 52%,#22201b 0%,#101110 39%,#070808 75%)}
+.vignette{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,6,6,.65),transparent 39%,transparent 68%,rgba(5,6,6,.3));z-index:1}
+.masthead,footer{position:absolute;left:clamp(24px,5vw,76px);right:clamp(24px,5vw,76px);z-index:4;display:flex;justify-content:space-between;align-items:center}
+.masthead{top:clamp(25px,5vh,56px)}
+.brand{font-family:Italiana,serif;font-size:clamp(27px,2.6vw,38px);letter-spacing:.17em}
+.eyebrow,.overline,footer,.status{font-size:10px;letter-spacing:.19em;font-weight:500}
+.eyebrow,footer{color:var(--muted)}
+.copy{position:absolute;left:clamp(24px,5vw,76px);top:31%;z-index:3;pointer-events:none}
+.overline{color:var(--gold);margin:0 0 22px}
+h1{font-family:Italiana,serif;font-weight:400;font-size:clamp(70px,9vw,142px);line-height:.87;letter-spacing:-.035em;margin:0}
+h1 em{font-weight:400;color:#aaa69d}
+.viewer{position:absolute;inset:0;z-index:2;cursor:grab;touch-action:none}
+.viewer:active{cursor:grabbing}
+canvas{width:100%;height:100%;display:block;outline:none}
+.status{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--gold);text-align:center;line-height:1.8;max-width:80vw;transition:opacity .3s;pointer-events:none}
+footer{bottom:clamp(26px,5vh,58px)}
+.instruction{color:var(--gold)}
+.instruction b{font-size:19px;font-weight:400;vertical-align:-2px;margin-left:10px}
+@media(max-width:700px){.experience{min-height:440px}.masthead .eyebrow{display:none}.copy{top:17%}h1{font-size:clamp(62px,16vw,100px)}.viewer{top:13%}footer{font-size:9px;letter-spacing:.1em}.vignette{background:linear-gradient(#07080855,transparent 30%)}}
+@media(prefers-reduced-motion:reduce){.status{transition:none}}
