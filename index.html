@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070808" />
+  <title>MOVADO — Time in motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Italiana&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main class="experience">
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="masthead"><span class="brand">MOVADO</span><span class="eyebrow">TIME IN MOTION / 01</span></header>
+    <div class="copy"><p class="overline">AN OBJECT OF PRECISION</p><h1>Beyond<br><em>the hour.</em></h1></div>
+    <div class="viewer" id="viewer" aria-label="Interactive 3D view of a Movado gold watch">
+      <canvas id="watch-canvas"></canvas>
+      <div class="status" id="status" role="status">Loading the watch…</div>
+    </div>
+    <footer><span>GOLD WATCH / 3D STUDY</span><span class="instruction">DRAG TO TURN <b>↔</b></span></footer>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
