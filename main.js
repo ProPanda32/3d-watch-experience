@@ -31,6 +31,12 @@ scene.add(soft);
 const watchPivot = new THREE.Group();
 watchPivot.rotation.set(-0.13, 0.48, 0.07);
 scene.add(watchPivot);
+let centeredWatch = null;
+function fitWatch() {
+  if (!centeredWatch) return;
+  const targetSize = viewer.clientWidth < 700 ? 0.9 : 1.9;
+  centeredWatch.scale.setScalar(targetSize / centeredWatch.userData.originalSize);
+}
 const MODEL_URL = './Models/movado_gold_watch__photorealistic_3d_model.glb';
 new GLTFLoader().load(MODEL_URL, (gltf) => {
   const watch = gltf.scene;
@@ -46,7 +52,9 @@ new GLTFLoader().load(MODEL_URL, (gltf) => {
   const centered = new THREE.Group();
   watch.position.sub(center);
   centered.add(watch);
-  centered.scale.setScalar(1.9 / largest);
+  centered.userData.originalSize = largest;
+  centeredWatch = centered;
+  fitWatch();
   watchPivot.add(centered);
   status.style.opacity = '0';
   setTimeout(() => status.remove(), 350);
@@ -87,6 +95,7 @@ function resize() {
   camera.aspect = width / height;
   camera.position.z = width < 700 ? 7.2 : 6;
   camera.updateProjectionMatrix();
+  fitWatch();
 }
 new ResizeObserver(resize).observe(viewer);
 resize();
